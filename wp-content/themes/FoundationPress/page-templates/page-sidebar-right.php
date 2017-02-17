@@ -1,12 +1,12 @@
 <?php
 /*
-Template Name: Full Width
+Template Name: Right Sidebar (same as default)
 */
 get_header(); ?>
 
 <?php get_template_part( 'template-parts/featured-image' ); ?>
 
-<div id="page-full-width" role="main">
+<div id="page" role="main">
 
 <?php do_action( 'foundationpress_before_content' ); ?>
 <?php while ( have_posts() ) : the_post(); ?>
@@ -30,6 +30,7 @@ get_header(); ?>
 <?php endwhile;?>
 
 <?php do_action( 'foundationpress_after_content' ); ?>
+<?php get_sidebar(); ?>
 
 </div>
 
