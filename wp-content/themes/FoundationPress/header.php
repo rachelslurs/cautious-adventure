@@ -37,6 +37,9 @@
 		</div>
 
 		<nav id="site-navigation" class="main-navigation top-bar" role="navigation">
+			<div class="top-bar-title">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+			</div>
 			<div class="top-bar-left">
 				<?php foundationpress_top_bar_l(); ?>
 			</div>

@@ -1,5 +1,5 @@
 // Navigation breakpoints
-.desktop-menu, .top-bar-left {
+.desktop-menu, .top-bar-title, .top-bar-left, .top-bar-right {
   @include show-for(medium);
 }
 
@@ -45,11 +45,27 @@
   a {
     font-size: 1rem;
     color: #B9B9B9;
+    text-transform: uppercase;
   }
 }
 
 // Tablet and desktop menu
 .top-bar {
+  .top-bar-title {
+    margin: 0;
+    padding: 0;
+    a {
+      color: #b9b9b9;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      line-height: 1;
+      display: table-cell;
+      vertical-align: middle;
+      height: 45px;
+      padding: .5rem 1rem .5rem 1rem;
+    }
+  }
   .menu .home a {
     font-size: 1rem;
     color: #B9B9B9;
@@ -71,7 +87,7 @@
     padding-top: 0;
     padding-bottom: 0;
     font-weight: bold;
-    text-transform: uppercase;
+    // text-transform: uppercase;
     font-size: 0.8rem;
     line-height: 1;
 
@@ -83,7 +99,7 @@
   .menu .active > a { background-color: lighten($outer-space, 10%); }
 
   .menu>li:not(.menu-text)>a { padding: 1rem; }
-  .menu li:not(:last-child) { border-right: 1px solid #4e4e4e; }
+  // .menu li:not(:last-child) { border-right: 1px solid #4e4e4e; }
 
   .dropdown.menu .submenu { border: 0; }
   .dropdown.menu .has-submenu.is-down-arrow a { padding-right: 1rem; }
