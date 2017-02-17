@@ -1,3 +1,13 @@
+#page-sidebar-left {
+  .sidebar > article{
+    padding-right: 2rem;
+  }
+}
+#page {
+  .sidebar > article{
+    padding-left: 2rem;
+  }
+}
 .sidebar {
   @include breakpoint(small) {
     @include grid-column(12);
@@ -6,5 +16,21 @@
   @include breakpoint(medium) {
     @include grid-column(4);
     margin-top: 1rem;
+  }
+  .menu > li {
+    display: block;
+    font-size: .85rem;
+    &:hover {
+      background-color: #192551;
+      a {
+        color: $white;
+      }
+    }
+    &.current-menu-item {
+      background-color: #192551;
+      a {
+        color: $white;
+      }
+    }
   }
 }

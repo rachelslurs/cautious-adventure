@@ -1,0 +1,36 @@
+h1, h2 {
+  font-weight: 700;
+  text-transform: $header-text-transform;
+  color: $dark-gray;
+}
+h2, h3, h6 {
+  text-transform: $header-text-transform;
+  // letter-spacing: $header-letter-spacing;
+  color: #c11d1d;
+}
+
+p {
+  // margin-bottom: 1.3rem;
+}
+
+.chapter-heading {
+  font-size: 12px;
+  font-weight: 700;
+  color: $medium-gray;
+  text-transform: uppercase;
+  margin-bottom: .5rem;
+  p {
+    letter-spacing: 1px;
+    margin-bottom: 0;
+  }
+}
+
+.main-content {
+  ol, ul {
+    margin-left: 3.25rem;
+    li {
+      padding-left: 0.3rem;
+      padding-bottom: 0.5rem;
+    }
+  }
+}
