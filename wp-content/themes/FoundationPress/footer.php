@@ -13,6 +13,14 @@
 		</section>
 		<div id="footer-container">
 			<footer id="footer">
+				<div class="row">
+					<div class="small-8 large-4 columns small-centered large-centered footer-logo">
+						<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/indivisible.png" alt="">
+					</div>
+				</div>
+				<div class="menu-centered">
+					<?php foundationpress_footer_social(); ?>
+				</div>
 				<?php do_action( 'foundationpress_before_footer' ); ?>
 				<?php dynamic_sidebar( 'footer-widgets' ); ?>
 				<?php do_action( 'foundationpress_after_footer' ); ?>

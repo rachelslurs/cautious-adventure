@@ -8,11 +8,32 @@
  */
 
 register_nav_menus(array(
+	'top-bar-l'  => 'Left Top Bar',
 	'top-bar-r'  => 'Right Top Bar',
 	'mobile-nav' => 'Mobile',
+	'mobile-nav-bottom' => 'Mobile Nav Bottom',
+	'footer-social' => 'Footer Social',
 ));
 
 
+/**
+ * Desktop navigation - left top bar
+ *
+ * @link http://codex.wordpress.org/Function_Reference/wp_nav_menu
+ */
+if ( ! function_exists( 'foundationpress_top_bar_l' ) ) {
+	function foundationpress_top_bar_l() {
+		wp_nav_menu( array(
+			'container'      => false,
+			'menu_class'     => 'dropdown menu',
+			'items_wrap'     => '<ul id="%1$s" class="%2$s desktop-menu" data-dropdown-menu>%3$s</ul>',
+			'theme_location' => 'top-bar-l',
+			'depth'          => 3,
+			'fallback_cb'    => false,
+			'walker'         => new Foundationpress_Top_Bar_Walker(),
+		));
+	}
+}
 /**
  * Desktop navigation - right top bar
  *
@@ -46,6 +67,38 @@ if ( ! function_exists( 'foundationpress_mobile_nav' ) ) {
 			'items_wrap'     => '<ul id="%1$s" class="%2$s" data-accordion-menu>%3$s</ul>',
 			'fallback_cb'    => false,
 			'walker'         => new Foundationpress_Mobile_Walker(),
+		));
+	}
+}
+
+/**
+ * Mobile bottom navigation - topbar (default) or offcanvas
+ */
+if ( ! function_exists( 'foundationpress_mobile_nav_bottom' ) ) {
+	function foundationpress_mobile_nav_bottom() {
+		wp_nav_menu( array(
+			'container'      => false,                         // Remove nav container
+			'menu'           => __( 'mobile-nav-bottom', 'foundationpress' ),
+			'menu_class'     => 'vertical menu',
+			'theme_location' => 'mobile-nav-bottom',
+			'items_wrap'     => '<ul id="%1$s" class="%2$s" data-accordion-menu>%3$s</ul>',
+			'fallback_cb'    => false,
+			'walker'         => new Foundationpress_Mobile_Walker(),
+		));
+	}
+}
+
+/**
+ * Footer social - footer social
+ */
+if ( ! function_exists( 'foundationpress_footer_social' ) ) {
+	function foundationpress_footer_social() {
+		wp_nav_menu( array(
+			'container'      => false,                         // Remove nav container
+			'menu'           => __( 'footer-social-nav', 'foundationpress' ),
+			'theme_location' => 'footer-social-nav',
+			'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+			'fallback_cb'    => false,
 		));
 	}
 }
